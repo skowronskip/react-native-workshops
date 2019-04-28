@@ -1,15 +1,4 @@
-import React from 'react';
-import {Ionicons} from '@expo/vector-icons';
-import WeightScreen from "./screens/WeightScreen/weightScreen";
-import AddWeightScreen from "./screens/AddWeightScreen/AddWeightScreen";
-import ProfileScreen from "./screens/ProfileScreen/profileScreen";
+import { createAppContainer } from 'react-navigation';
+import {ProductStack, WeightStack} from "./navigation/AppNavigation";
 
-export default class App extends React.Component {
-  render() {
-    return (
-        <ProfileScreen/>
-    );
-  }
-}
-
-
+export default createAppContainer(WeightStack);

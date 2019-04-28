@@ -7,9 +7,9 @@ class WeightRow extends Component {
         return (
             <View style={styles.weightRow}>
                 <Text style={styles.weightValue}>{this.props.value}</Text>
-                <Text style={styles.weightDate}>{this.props.date}</Text>
+                <Text style={styles.weightDate}>{this.props.date.toLocaleDateString()}</Text>
                 <TouchableOpacity
-                    onPress={() => this.props.onEditItem(this.props.id)}
+                    onPress={() => this.props.onEditItem(this.props.id, this.props.value, this.props.date)}
                     style={styles.iconWrapper}>
                     <Ionicons name='md-create' size={16} color='gray' />
                 </TouchableOpacity>

@@ -15,17 +15,17 @@ export default class WeightScreen extends React.Component {
                 {
                     id: 1,
                     value: '90',
-                    date: '12.08.2019'
+                    date: new Date(2019, 0, 20)
                 },
                 {
                     id: 2,
                     value: '80',
-                    date: '13.07.2019'
+                    date: new Date(2019, 1, 5)
                 },
                 {
                     id: 3,
                     value: '85',
-                    date: '16.01.2019'
+                    date: new Date(2019, 2, 16)
                 }
             ]
         };
@@ -34,6 +34,10 @@ export default class WeightScreen extends React.Component {
         this.onPressButton = this.onPressButton.bind(this);
     }
 
+    onAddWeight = () => {
+        this.props.navigation.navigate('AddWeightScreen');
+    };
+
     onChangeBMI = (value) => {
         this.setState({
             BMI: value
@@ -41,11 +45,14 @@ export default class WeightScreen extends React.Component {
     };
 
     onPressButton = () => {
-        console.log(this.state.BMI);
+        this.onAddWeight();
     };
 
-    onEditItem = (id) => {
-        console.log(`Edit ${id}`);
+    onEditItem = (id, weight, date) => {
+        this.props.navigation.navigate('AddWeightScreen', {
+            title: 'Edit Weight',
+            weight, date
+        });
     };
 
     onRemoveItem = (id) => {

@@ -26,8 +26,10 @@ const styles = StyleSheet.create({
     },
     inputWrapper: {
         width: '100%',
+        marginVertical: 10
     },
     label: {
+        textTransform: 'uppercase',
         color: '#0080FF',
         fontWeight: 'bold'
     },
